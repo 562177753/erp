@@ -1,0 +1,87 @@
+/*产品大区*/
+.row_1{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	height: 400px;
+	overflow-y: auto;
+}
+/*产品分校*/
+.row_2{
+	background: rgb(245,245,245);
+	border-radius: 5px;
+	height: 400px;
+	position: relative;
+}
+/*内容*/
+.row_body{
+	width: 99%;
+	margin:0 auto;
+	height: 86%;
+	overflow-y: auto;
+}
+/*底部*/
+.row_footer{
+	margin: 0 auto;
+	width: 99%;
+	height: 50px;
+	position:absolute;
+	bottom: 0;
+}
+/*底部div*/
+.row_footer_body{
+	padding-top: 10px;
+	width: 18%;
+	margin: 0 auto;
+}
+/*内容*/
+.log_1{
+	margin-top: 10px;
+	padding-left: 10px;
+	word-wrap : break-word ;
+	width:95%;
+	height:82%;
+}
+.log_1 div{
+	margin-bottom: 10px;
+ display: inline-block;	
+}	
+/*树形图*/
+.odl:nth-child(1){
+	margin-top: 10px;
+}
+.odl dt{
+	cursor: pointer;
+	background: url(wen1.png) no-repeat 1%;
+	text-indent: 2em;
+}
+.odl dd{
+	background: url(wen1.png) no-repeat 5%;
+	text-indent: 3em;
+	height: 30px;
+	line-height: 30px;
+	display: none;
+}
+.odl dd:hover{
+	background: rgb(30,144,255);
+	color:white;
+	cursor: pointer;
+}
+.odiv{
+	padding-right: 10px;
+	padding-left: 10px;
+	text-align: center;
+	margin-right: 20px;
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #ccc;
+	background: white;
+}
+.odiv a{
+   margin-right: 10px;
+}	
+.odiv b{
+  cursor: pointer;
+}	
+._display{
+	display:none;
+}

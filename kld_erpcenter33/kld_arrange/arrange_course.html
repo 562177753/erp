@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>卡拉荻|ERP系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+    <style>
+        select{
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+            padding-right: 14px;
+        }
+        /**内容超出 出现滚动条 **/
+        #bui-stdmod-body{
+            height: 50px;
+            overflow-x : hidden;
+            overflow-y : auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row-fluid">
+            <form class="form-panel">
+                <div class="panel-title">
+                  <h3 style="line-height: 45px;height: 45px">班型查询</h3>
+                </div>
+                <form id="B_form2">
+                    <div class="row detail-row">
+                        <div class="control-group" >
+                            <div class="controls bui-form-group-select" data-type="type0">
+                                <div class="" style="margin-left: 20px;width:%;padding-top:10px">
+                                    <!--二级联动-->
+                                    <div style="display: inline-block; padding-top: 10px;">
+                                        <label>项目名称：</label>
+                                        <!--<input type="text" id="service_army_false" style="width: 180px">-->
+                                        <div id="box1" style="display: inline-block;">
+                                            <input type="text" id="service_army" placeholder="请输入项目名称" style="width: 180px">
+                                        </div>
+                                    </div>
+                                    <div style="padding-top: 10px;margin-left:4%;display: inline-block;">
+                                        <label style="padding-left: 0px;">服务院校：</label>&nbsp;
+                                        <div id="box2" style="display: inline-block">
+                                            <input type="text" id="service_school" placeholder="请输入院校名称" style="width: 180px">
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-left: 4%;padding-top:10px;display: inline-block;">
+                                        <label>班型名称：</label>
+                                        <input type="text" id="search_banxin" style="height: 20px;width: 180px; margin-right: 0;line-height: 20px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row detail-row">
+                        <div class="control-group" >
+                            <div class="controls bui-form-group-select" data-type="type0">
+                                <div class="" style="margin-left: 20px;width:%;padding-top:10px">
+                                    <div style="padding-top: 10px;display: inline-block;">
+                                        <label>创建时间：</label>
+                                        <input type="text" id="start_time" class="calendar section_time" style="width: 180px" /> --
+                                        <input type="text" id="finish_time" class="calendar section_time" style="width: 180px"/>
+                                    </div>
+                                    <!--选择radio-->
+                                    <div class="radio_sp"  style="margin-left:4%;padding-top:15px;display: inline-block;">
+                                        <label>是否排课：</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="1" checked style="width: 50px">已排课</label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optionsRadiosinline" id="optionsRadios2" value="0" style="width: 50px">未排课</label>
+                                    </div>
+
+                                    <!--查询按钮-->
+                                    <div style="padding-top: 10px;margin-left: 4%;display: inline-block;">
+                                        <input type="button" id="btnSearch" class="button button-primary" value="查询">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </form>
+        </div>
+        <!--渲染课程的详细信息-->
+        <div class="row-fluid">
+            <div class="span24">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>班型详细信息</h3>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="search-grid-container">
+                            <div id="grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--选中后的显示列表-->
+        <div class="row-fluid" id="Tab_switch2">
+            <!--<div class="" style="margin-left: 0px;">-->
+            <div class="span24">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3 style="display: inline-block;">课程列表</h3>
+                        <div id="boxn" style="display: inline-block;margin-left:5%;">
+                            <input type="text" id="teacherName" placeholder="请输入授课老师">
+                        </div>
+                        <div style="display: inline-block;margin-left: 15px;">
+                            <button id="btn_sousuo" type="button" data-toggle="modal" class="button button-info">搜索</button>
+                        </div>
+                        <div style="float: right;display: inline-block">
+                            <button id="btn_xinzen" type="button" data-toggle="modal" class="button button-warning">新增课程</button>
+                            <button id="btn_daoru" type="button" data-toggle="modal" class="button button-warning">导入课程</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="search-grid-container">
+                            <div id="grid_registration_list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+
+
+    <!--start 新增课程模态框 -->
+    <div class="modal fade" id="xingzen_modal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+        <form id="" class="form-horizontal">
+            <div class="modal-body" style="padding-right: 70px;">
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>课程类型： </label>
+                        <select id="order_class_type_1" class="" style="width: 165px;height: 28px;">
+                            <option value="必修课">必修课</option>
+                            <option value="公开课">公开课</option>
+                            <option value="选修课">选修课</option>
+                            <option value="题海课">题海课</option>
+                            <option value="串讲课">串讲课</option>
+                            <option value="加课">加课</option>
+                            <option value="前导课">前导课</option>
+                        </select>
+                    </div>
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>课程名称：</label>
+                        <input id="class_name_1" type="text" class="detail-text" style="height: 20px;width: 140px" placeholder="请输入课程名称"/>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>授课日期：</label>
+                        <input type="text" id="teach_data" class="calendar section_data" style='width: 140px;height: 20px;'>
+                    </div>
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"> <span style="color: red;">*</span>开始时间：</label>
+                        <div style="display: inline-block;">
+                            <input type="text" id="begin_time_data" placeholder="请选择时间" readonly = "readonly" style='width: 140px;height: 20px;'>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row detail-row">
+
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>结束时间：</label>
+                        <div style="display: inline-block">
+                            <input type="text" id="end_time_data" placeholder="请选择时间" readonly = "readonly" style='width: 140px;height: 20px;'>
+                        </div>
+                    </div>
+                    <div class="span6"  style="margin-left:55px">
+                        <label class="span2">授课老师：</label>
+                        <div id="box3" style="display: inline-block;margin-left: -5px;">
+                            <input type="text" id="teacher" placeholder="请输入授课老师" style="width: 140px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:55px">
+                        <label class="span2">助教老师：</label>
+                        <div id="box4" style="display: inline-block;margin-left:-5px">
+                            <input type="text" id="assistant" placeholder="请输入助教老师" style="width: 140px">
+                        </div>
+                    </div>
+                    <div class="span6"  style="margin-left:57px;">
+                        <label class="span2">直播间id：</label>
+                        <input type="text" id="num_home_1"style='width: 140px;height: 20px;margin-left: -7px;'>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:55px">
+                        <label class="span2">教学备注：</label>
+                        <textarea id="teach_description" name="a" style="width:140px;height:60px;margin-left:-5px"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
+
+            <!--</div>-->
+        </form>
+    </div>
+    <!--end   新增课程模态框 -->
+
+    <!--start 导入课程模态框 -->
+    <div id="content" class="hide">
+        <form method="post" enctype="multipart/form-data" id="upload">
+            <input type="file" name="excel" id="files"/>
+            <input type="hidden" name="class_id" id="submit_id"/>
+            <input type="hidden" name="class_name" id="submit_name"/>
+            <!--<button type="button" id="submit">提交</button>-->
+        </form>
+    </div>
+    <!--end   导入课程模态框 -->
+
+    <!--start 编辑课程模态框 -->
+    <div class="modal fade" id="bianji_modal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none">
+        <form id="" class="form-horizontal">
+            <div class="modal-body" style="padding-right: 70px;">
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>课程类型： </label>
+                        <select id="order_class_type_2" class="" style="width: 165px;height: 28px;">
+                            <option value="必修课">必修课</option>
+                            <option value="公开课">公开课</option>
+                            <option value="选修课">选修课</option>
+                            <option value="题海课">题海课</option>
+                            <option value="串讲课">串讲课</option>
+                            <option value="加课">加课</option>
+                            <option value="前导课">前导课</option>
+                        </select>
+                    </div>
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>课程名称：</label>
+                        <input id="class_name_2" type="text" class="detail-text" style="height: 20px;width: 140px;" placeholder="请输入课程名称"/>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>授课日期：</label>
+                        <input type="text" id="teach_data_2" class="calendar section_data" style='width: 140px;height: 20px;'>
+                    </div>
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"> <span style="color: red;">*</span>开始时间：</label>
+                        <div style="display: inline-block">
+                            <input type="text" id="begin_time_data_2" placeholder="请选择时间" readonly = "readonly" style='width: 140px;height: 20px;'>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:50px">
+                        <label class="span2"><span style="color: red;">*</span>结束时间：</label>
+                        <div style="display: inline-block">
+                            <input type="text" id="end_time_data_2" placeholder="请选择时间" readonly = "readonly" style='width: 140px;height: 20px;'>
+                        </div>
+                    </div>
+                    <div class="span6"  style="margin-left:55px">
+                        <label class="span2">授课老师：</label>
+                        <div id="box5" style="display: inline-block;margin-left:-5px;">
+                            <input type="text" id="teacher_2" placeholder="请输入授课老师" style="width: 140px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+
+                    <div class="span6"  style="margin-left:55px">
+                        <label class="span2">助教老师：</label>
+                        <div id="box6" style="display: inline-block;margin-left:-5px">
+                            <input type="text" id="assistant_2" placeholder="请输入授课老师" style="width: 140px">
+                        </div>
+                    </div>
+                    <div class="span6"  style="margin-left:57px">
+                        <label class="span2">直播间id：</label>
+                        <input type="text" id="num_home_2"style='width: 140px;height: 20px;margin-left:-7px'>
+                    </div>
+                </div>
+
+                <div class="row detail-row">
+                    <div class="span6"  style="margin-left:55px">
+                        <label class="span2">教学备注：</label>
+                        <textarea id="teach_description_2" name="a" style="width:140px;height:60px;margin-left:-5px"></textarea>
+                    </div>
+                </div>
+                <!--<div class="modal-footer">
+                    <button type="button" class="btn btn-primary">确定新增</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>-->
+            </div>
+            <!--</div>-->
+            <!--</div>-->
+        </form>
+    </div>
+    <!--end 编辑课程模态框 -->
+
+
+    <!--start 查看课程教学备注模态框 -->
+    <div class="modal fade" id="content2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-body" id="modal-body" style="margin: 0 auto;width: 393px;height: 100%;overflow-y: auto;word-wrap : break-word ;">
+        </div>
+    </div>
+    <!--end 查看课程教学备注模态框 -->
+
+</body>
+<script type="text/javascript" src="../assets/bootstrap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript" src="../assets/kld_js/pdf.js"></script>
+<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+
+<script type="text/javascript" src="../assets/kld_js/arrange_course.js"></script>
+
+<script >
+
+</script>
+</html>

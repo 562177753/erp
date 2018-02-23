@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>卡拉荻|ERP系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>
+    <!--<link href="../assets/css/sales_product_list.css" type="text/css" />-->
+</head>
+<body>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span24">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>班型查询</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="searchForm" class="form-horizontal">
+                        <div class="row">
+                            <div class="bui-form-group-select" data-type="type1">
+                                <div class="control-group span8 span-first">
+                                    <label class="control-label">大区</label>
+                                    <div class="controls">
+                                        <select value="" id="part_id">
+                                            <!--<option selected="selected">请选择</option>-->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group span8">
+                                    <label class="control-label">军团</label>
+                                    <div class="controls">
+                                        <select value="" id="opr_college_id">
+                                            <!--<option selected="selected">请选择</option>-->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bui-form-group-select" data-type="type0">
+                                <div class="control-group span8">
+                                    <label class="control-label">项目</label>
+                                    <div class="controls">
+                                        <select value="" id="pro_first_id">
+                                            <!--<option selected="selected">请选择</option>-->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group span8 span-first">
+                                    <label class="control-label">院校</label>
+                                    <div class="controls">
+                                        <select value="" id="pro_second_id">
+                                            <!--<option selected="selected">请选择</option>-->
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group span8">
+                                    <label class="control-label">班型名称</label>
+                                    <div class="controls">
+                                        <select value="" id="class_names">
+                                            <!--<option selected="selected">请选择</option>-->
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>状态</label>
+                                <div class="controls">
+                                    <select id="state">
+                                        <option>请选择</option>
+                                        <option value="上架">已上架</option>
+                                        <option value="下架">已下架</option>
+                                        <!--<option value="全部">全部</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="control-group span12 offset12">
+                                <input type="button" id="btnSearch" class="button button button-primary" value="查询"
+                                       style="padding: 4px 25px;"/>
+                                <input type="button" id="btnReset" class="button button button-warning" value="重置"
+                                       style="padding: 4px 25px;"/>
+                                <!--<input type="button" id="btnAdd" class="button button button-success" value="新增"
+                                       style="padding: 4px 25px;"/>-->
+                                <a href="class_add_new.html" id="btnAdd" class="button button button-success"
+                                   style="padding: 4px 25px;">新增</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--<form id="uploadForm" enctype="multipart/form-data">
+        <input id="file" type="file" name="file"/>
+        <button id="upload" type="button">upload</button>
+    </form>-->
+
+    <div class="row-fluid">
+        <div class="span24">
+            <div class="panel">
+                <div class="panel-header clearfix">
+                    <h3 class="pull-left">查询结果</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="search-grid-container">
+                        <div id="grid" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../assets/bootstrap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../assets/js/sea.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<!--<script type="text/javascript" src="../assets/js/page-min.js"></script>-->
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+<script type="text/javascript" src="../assets/kld_js/class_type.js"></script>
+</body>
+</html>

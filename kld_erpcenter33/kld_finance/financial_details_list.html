@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>卡拉荻|ERP系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<meta http-equiv="Pragma" content="no-cache">    
+	<meta http-equiv="Cache-Control" content="no-cache">    
+	<meta http-equiv="Expires" content="0">    
+	
+	<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+ 	<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span24">
+			<div class="panel">
+	    	<div class="panel-header">
+				<h3>查询条件</h3>
+			</div>
+			<div class="panel-body">
+			<form id="searchForm" class="form-horizontal">
+				<div class="row">
+					<div class="control-group span10 span-first">
+						<label class="control-label">查询日期</label>
+						<div class="controls bui-form-group" data-rules="{dateRange : true}">
+						<input type="text" class="calendar" />
+						<label>&nbsp;-&nbsp;</label>
+						<input type="text" class="calendar" /> 
+						</div>
+					</div>
+					<div class="control-group span10">
+						<label class="control-label">销售分校</label>
+						<div class="controls">
+						<select>
+							<option value="" selected>--请选择--</option>
+						</select>
+						</div>
+					</div>
+					<div class="span1">&nbsp;</div>
+					<div class="span3">
+						<input type="button" id="btnSearch" class="button button-primary" value="查询" />
+						<input type="reset" class="button" value="重置" />
+					</div>
+				</div>
+			</form>
+			</div>
+			</div>
+			</div>
+		</div>
+		
+		<div class="row-fluid">
+			<div class="span24">
+			<div class="panel">
+	    	<div class="panel-header clearfix">
+				<h3 class="pull-left">查询列表</h3>
+				<div class="pull-right">
+					<a href="javascript:;" class="button button-small">导出Excel文件</a>
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="search-grid-container">
+				<div id="grid"></div>
+				</div>
+			</div>
+	    	</div>
+	    	</div>
+    	</div>
+	</div>
+	
+	<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+	<script type="text/javascript" src="../assets/js/config-min.js"></script>
+	
+	<script type="text/javascript" src="../assets/kld_js/financial_details_list.js"></script>
+</body>
+</html>

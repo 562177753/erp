@@ -1,0 +1,211 @@
+#btnSearch{
+	padding: 4px 25px;
+}
+#btnReset{
+	padding: 4px 25px;
+}
+#class_type{
+	margin-left: 25px;
+	height: 80px;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+}
+.class_select{
+	right: 0;
+	display: none;
+	background: white;
+	position: absolute;
+	width: 93.5%;
+	height: 120px;
+	border: 1px solid #ccc;
+}
+#class_input{
+	width: 94%;
+}
+#class_select{
+	  background: white;
+	  width: 100%;
+	  height: 74%;
+	  overflow-y: auto;
+}
+#class_miaoshu{
+	width: 56%;
+	margin-left: 2%;
+	border: 1px solid #ccc;
+	height: 50px;
+}
+/*自定义弹框*/
+.modal_1{
+	display: none;
+	background: black;
+	opacity: 0.5;
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	left: 0;
+	top: 0;
+	z-index: 50;
+}
+/*弹框主体*/
+#modal_2{
+	display: none;
+	width:780px;
+	height: 500px;
+	background: white;
+	z-index: 100;
+	position: fixed;
+    left: 50%;
+    top: 50%;
+   margin-left: -390px;
+   margin-top: -250px;	
+   border-radius:10px ;
+   box-shadow: 1px 1px 10px 1px #100f0f;
+}
+/*弹框标题*/
+#modal_header{
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	font-weight: 500;
+	border-bottom: 1px solid #ccc;
+}
+/*弹框主体*/
+.modal_body{
+	padding-left: 20px;
+	width: 95%;	
+	margin: 10px auto;
+}
+.orw_1{
+	display: flex;
+	width: 100%;
+}
+.row_1{
+	margin-top: 10px;
+	width: 34%;
+}
+.lale_1{
+	margin-right: 11px;
+}
+.lable_2{
+	margin-right: 47px;
+}
+.lable_3{
+margin-right: 24px;	
+}
+.orw_2{
+	display: flex;
+	width: 100%;
+	margin-top: 15px;
+}
+.lable_4{
+	height: 30px;
+	line-height: 30px;
+}
+.bnt_1{
+	margin-left: 4px;
+}
+.orw_2 button{
+	margin-top: -1px;
+	margin-right: 50px;
+}
+.lable_5{
+	height: 70px;
+	line-height: 70px;
+}
+.lable_6{
+	height: 50px;
+	line-height: 50px;
+}
+/*底部*/
+.footer_btn{
+	/*position: relative;*/
+	width: 100%;
+	border-top: 1px solid #ccc;
+	/*margin-top: 10px;*/
+}
+.footer_btn div{
+	margin-top: 25px;
+	position: absolute;
+	right: 50px;
+}
+/*自定义类名*/
+.foo_show{
+	font-size: 14px;
+}
+/* 班型选择hover*/
+#class_select div:hover{
+	background: rgb(30,144,255);
+	color: white;
+}
+.op{
+	text-align: center;
+	display:inline-block;
+	height:30px;
+	width:25%;
+}
+.op a{
+	font-size: 10px;
+	margin-left:5px;
+	line-height: 30px;
+}	
+.modal_div{
+	display: none;
+	position: absolute;
+	width:94%;
+	height: 66px;
+	right: 0;
+}
+.olabe_1{
+	margin-left: -10px;
+}
+.olable_2{
+	margin-left: 10%;
+}
+.olable_3{
+	margin-left: -1%;
+}
+.olable_4{
+	margin-left: -12px;
+}
+.olable_4_1{
+	width: 146px;
+	height: 30px;
+	margin-left: 20px;
+}
+.olable_5_1{
+	margin-left: 28px;
+	width: 146px;
+	height: 30px;
+}
+.form_1{
+	margin-top: 10px;
+	display: flex;
+	margin-left: 70px;
+  width: 85%;
+}
+.f_1{
+	width: 25%;
+}
+.f_2{
+	width: 75%;
+}
+.of_1{
+	display: inline-block;
+	width: 32%;
+	/*display: inline-block;*/
+}
+/*.select_dq{
+	margin-left: 35px;
+}*/
+.f_4{
+	width: 16%;
+	position: relative;
+	left: 56%;
+}
+#area_id,#pro_first_id,#pro_second_id{
+	margin-left: 36px;
+	width: 51%;
+}
+#status_code{
+	width: 49%;
+}

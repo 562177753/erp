@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>卡拉荻|ERP系统</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" rel="stylesheet" />
+		<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" rel="stylesheet" />
+		<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" rel="stylesheet" />
+		<link href="../assets/assrts_css/student_registration_list.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row-fluid">
+				<form id="searchForm" class="form-panel">
+					<div class="panel-title">
+						<h3 class="h_3">学员查询信息</h3>
+					</div>
+					<ul class="panel-content">
+						<li>
+							<span><label class="oable_1">手机号： </label><input  id="home_phone_1" type="text" /></span>
+							<span><label>姓名： </label><input value="" id="home_name_1" type="text" /></span>
+							<input type="button" id="btnSearch" class="button button-primary" value="查询" />
+							<button id="btn_xinzen" type="button" data-toggle="modal" class="button button-warning">新增学员信息</button>
+							<button type="button" id="btn_cz" class="button button-default">重置</button>
+						</li>
+					</ul>
+				</form>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span24">
+					<div class="panel">
+						<div class="panel-header">
+							<h3 class="h3_1">学员查询信息</h3>
+						</div>
+						<div class="panel-body">
+							<div class="search-grid-container">
+								<div id="grid"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row-fluid">
+				<form class="form-panel">
+					<div class="panel-title">
+						<h3 class="h3_2">学员查询信息</h3>
+					</div>
+					<div class="row detail-row">
+						<div class="span4 row_div_1">
+							<label>手机：</label><span id="phone_1" class="detail-text"></span>
+						</div>
+						<div class="span4 row_div_2">
+							<label>姓名：</label><span id="name_1" class="detail-text"></span>
+						</div>
+						<div class="span4" class="row_div_2">
+							<label>户口所在地：</label><span id="hk_1" class="detail-text"></span>
+						</div>
+						<div class="span4 row_div_2">
+							<label>工作年份：</label><span id="gz_1" class="detail-text"></span>
+						</div>
+					</div>
+					<div class="row detail-row">
+						<div class="span4 row_div_3">
+							<label>毕业院校：</label><span id="by_1" class="detail-text"></span>
+						</div>
+
+						<div class="span4 row_div_4">
+							<label>年龄：</label><span id="nl_1" class="detail-text"></span>
+						</div>
+						<div class="span4 row_div_4">
+							<label>最高学历：</label><span id="xl_1" class="detail-text"></span>
+						</div>
+						<div class="detail-actions">
+							<a class="button button-warning" id="sign_up">学员报名</a>
+							<a class="button button-primary" id="auditPass">订金缴纳</a>
+							<a class="button button-primary" id="see">查看学员</a>
+							<a class="button button-primary" href="#" id="stu_zx">咨询未报名</a>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="row-fluid" id="Tab_switch">
+				<div id="tab">
+
+					<!--报名单/订金-->
+					<div class="bui-tab-panel bui-tab nav-tabs" id="_TAB" style="display: none;" aria-disabled="false" aria-pressed="false">
+						<div class="tab-panel-inner">
+							<ul>
+								<li id="oli1" class="oli1 bui-tab-panel-item bui-tab-item bui-tab-panel-item-selected bui-tab-item-selected active" aria-disabled="false" aria-pressed="false">
+									<span class="bui-tab-item-text">报名单</span></li>
+								<li id="oli2" class="oli1 bui-tab-panel-item bui-tab-item" aria-disabled="false" aria-pressed="false">
+									<span class="bui-tab-item-text">订金</span></li>
+							</ul>
+							<div class="tab-panels"></div>
+						</div>
+					</div>
+				</div>
+				<div id="panel">
+
+					<div class="span32" id="p1">
+						<div id="grid_registration_list"></div>
+					</div>
+					<div class="span32" id="p2">
+
+						<div id="grid_earnest_list">
+
+						</div>
+					</div>
+
+				</div>
+
+				<!--</div>-->
+			</div>
+			<br />
+			<!--子订单-->
+			<div class="row-fluid" id="Tab_switch" style="">
+				<div id="Sub_order">
+
+				</div>
+			</div>
+		</div>
+
+		<!-- start 学员报名|学员详细信息|订金缴纳模态框（Modal）-->
+		<div class="modal fade" id="earnest_student_registration_modal">
+			<form id="J_Form" class="form-horizontal">
+				<div class="modal-body" style="">
+					<div class="row detail-row row_div_6">
+						<div class="span4">
+							<label>姓名：</label><span id="sp_name3" class="detail-text"></span>
+						</div>
+						<div class="span6 row_div_7">
+							<label>手机号：</label><span id="sp_tel3" class="detail-text"></span>
+						</div>
+						<div class="span6 row_div_7">
+							<label>缴费报名点：</label><span id="org_school_id" class="detail-text"></span>
+						</div>
+						<div class="span8">
+							<label>课程顾问：</label><span id="create_user_id" class="detail-text"></span>
+						</div>
+					</div>
+
+					<div class="row detail-row row_div_6">
+						<div class="span6 row_div_8">
+							<label>报名单 ：</label>
+							<select id="btn_bm_1" class="selectpicker bla bla bli" data-live-search="true">
+								<option>--请选择--</option>
+							</select>
+
+						</div>
+						<div class="span6 row_div_9">
+							<label>预留截至：</label>
+							<input type="text" id="datetimepicker" class="calendar">
+						</div>
+					</div>
+					<div class="row detail-row row_div_6">
+						<div class="span6 row_div_10">
+							<label>项目：</label>
+							<select style="" id="id_xm" class="selectpicker bla bla bli" data-live-search="true"></select>
+						</div>
+						<div class="span6 row_div_11" />
+						<label>院校：</label>
+						<select id="id_yx" class="selectpicker bla bla bli" data-live-search="true"></select>
+					</div>
+				</div>
+
+				<div class="row detail-row row_div_6">
+					<div class="span6 row_div_12">
+						<label>产品包：</label>
+						<select id="id_bx" class="selectpicker bla bla bli" data-live-search="true">
+
+						</select>
+					</div>
+					<div class="span6 row_div_13">
+						<label>订金金额：</label>
+						<input id="stu_djje" type="text" onkeyup="if(! /^\d+$/.test(this.value)){alert('数字');this.value='';}" />
+					</div>
+				</div>
+		</div>
+		</form>
+		</div>
+		<!-- end 学员报名|学员详细信息|订金缴纳模态框（Modal）-->
+
+		<!-- start 学员报名|学员详细信息|查看学员模态框（Modal）-->
+		<div class="modal fade" id="view_student_information_modal" style="display: none;">
+			<div class="modal-body row_div_14">
+				<div class="row detail-row">
+					<div class="span6 row_div_7">
+						<label class="span2"> <span class="ospan_1">*</span> 姓名：</label>
+						<input type="text" id="btn_name_1" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2"><span class="ospan_1">*</span>证件类型：</label>
+						<select class="" id="btn_zj_1">
+							<option value="身份证">身份证</option>
+							<option value="护照">护照</option>
+							<option value="港澳通行证">港澳通行证</option>
+							<option value="台胞证">台胞证</option>
+							<option value="军官证">军官证</option>
+							<option value="士官证">士官证</option>
+						</select>
+					</div>
+					<div class="span6" style="margin-left:49px">
+						<label class="span2"><span class="ospan_1">*</span>出生日期：</label>
+						<input type="text" id="btn_riqi_1" class="calendar">
+					</div>
+				</div>
+
+				<div class="row detail-row">
+					<div class="span6" style="margin-left:50px">
+						<label class="span2"><span style="color: red;">*</span>性别：</label>
+						<select id="btn_age" style="width: 166px;height: 30px;">
+						</select>
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2"><span class="ospan_1">*</span>证件号：</label>
+						<input type="text" id="btn_zjh_1" class="detail-text" />
+					</div>
+					<div class="span6" style="margin-left:49px">
+						<label class="span2">年龄：</label>
+						<input type="text" id="btn_sex" class="detail-text" />
+					</div>
+				</div>
+
+				<div class="row detail-row">
+					<div class="span6 row_div_15">
+						<label class="span2">手机：</label>
+						<input disabled="disabled" type="text" id="btn_phone_2" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">最高学历：</label>
+						<select id="btn_xueli_2">
+							<option value="小学">小学</option>
+							<option value="初中">初中</option>
+							<option value="高中">高中</option>
+							<option value="中专">中专</option>
+							<option value="大专">大专</option>
+							<option value="本科">本科</option>
+						</select>
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">户籍：</label>
+						<input type="text" id="btn_hj_2" class="detail-text" />
+					</div>
+				</div>
+				<div class="row detail-row">
+					<div class="span6 row_div_15">
+						<label class="span2">邮箱：</label>
+						<input type="text" id="btn_em_2" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">家庭电话：</label>
+						<input type="text" id="btn_jt_phone" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">QQ：</label>
+						<input type="text" id="btn_qq_2" class="detail-text" />
+					</div>
+				</div>
+
+				<div class="row detail-row">
+					<div class="span6 row_div_15">
+						<label class="span2">办公电话：</label>
+						<input type="text" id="btn_bg_phone" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">微信号：</label>
+						<input type="text" id="btn_wx_1" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">工作年限：</label>
+						<input type="text" maxlength="3" id="workyear_2" onkeyup="if(! /^\d+$/.test(this.value)){this.value='';}" />
+					</div>
+				</div>
+
+				<div class="row detail-row">
+					<div class="span6 row_div_15">
+						<label class="span2">紧急联系人：</label>
+						<input type="text" id="btn_jj" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">紧急联系人电话：</label>
+						<input type="text" id="btn_jj_phone" class="detail-text" />
+					</div>
+					<div class="span6 row_div_15">
+						<label class="span2">毕业院校：</label>
+						<input type="text" name="" id="graduate_institutions" />
+					</div>
+				</div>
+				<div class="row detail-row"></div>
+			</div>
+		</div>
+		<!-- end 学员报名|学员详细信息|查看学员模态框（Modal）-->
+
+		<!--start 新增学员信息模态框 -->
+		<div class="modal fade" id="xingzen_modal">
+			<form id="" class="form-horizontal">
+				<div class="modal-body row_div_16">
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2"><span class="ospan_1">*</span>姓名： </label>
+							<input id="name_2" type="text" class="detail-text" />
+						</div>
+						<div class="span6 row_div_15">
+							<label class="span2"><span class="ospan_1" >*</span>是否预约：</label>
+							<select id="order">
+								<option>--请选择--</option>
+								<option value="1">是</option>
+								<option value="0">否</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2"><span class="ospan_1" >*</span>手机号：</label>
+							<input type="text" id="btn_phone_1" class="detail-text" />
+						</div>
+						<div class="span6 row_div_15">
+							<label class="span2"><span class="ospan_1" >*</span>身份证号：</label>
+							<input type="text" maxlength="18" id="btn_identity_id_1" class="detail-text" />
+						</div>
+					</div>
+
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2"> <span class="ospan_1" >*</span>性别：</label>
+							<select class="" id="sex_code">
+								<option value="FEMALE">女</option>
+								<option value="MALE">男</option>
+							</select>
+
+						</div>
+						<div class="span6 row_div_15">
+							<label class="span2">毕业院校：</label>
+							<input type="text" id="schoolofgraduation" class="detail-text" />
+						</div>
+					</div>
+
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2">最高学历：</label>
+							<select class="" id="btn_xueli_1">
+								<option value="小学">小学</option>
+								<option value="初中">初中</option>
+								<option value="高中">高中</option>
+								<option value="中专">中专</option>
+								<option value="大专">大专</option>
+								<option value="本科">本科</option>
+							</select>
+						</div>
+						<div class="span6 row_div_15">
+							<label class="span2">户籍：</label>
+							<input type="text" id="btn_huju_1" class="detail-text" />
+						</div>
+					</div>
+
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2">出生日期：</label>
+							<input type="text" id="datetimepicker_2" class="calendar">
+						</div>
+
+						<div class="span6 row_div_15">
+							<label class="span2">邮箱：</label>
+							<input type="text" id="btn_em" class="detail-text" />
+						</div>
+					</div>
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2">证件类型：</label>
+							<select class="" id="btn_identity_type_code">
+								<option value="身份证">身份证</option>
+								<option value="护照">护照</option>
+								<option value="港澳通行证">港澳通行证</option>
+								<option value="台胞证">台胞证</option>
+								<option value="军官证">军官证</option>
+								<option value="士官证">士官证</option>
+							</select>
+						</div>
+						<div class="span6 row_div_15">
+							<label class="span2">工作年份：</label>
+							<input type="text" id="workyear" maxlength="2" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " />
+						</div>
+					</div>
+					<div class="row detail-row">
+						<div class="span6 row_div_15">
+							<label class="span2">qq：</label>
+							<input type="text" id="btn_qq_1" class="detail-text" />
+						</div>
+						<div class="span6 row_div_15">
+							<label class="span2">咨询师账号：</label>
+							<input type="text" id="counselor_attach" disabled="disabled" class="detail-text" />
+						</div>
+					</div>
+				</div>
+				<!--</div>-->
+
+				<!--</div>-->
+			</form>
+		</div>
+		<!--end新增学员信息模态框 -->
+		<footer>
+			<div></div>
+		</footer>
+
+		<!--自定义订金详情弹框-->
+		<div id="tanchu"></div>
+		<div id="tanchu_2">
+			<div> &nbsp;&nbsp;<b>订金详情</b></div>
+			<div class="odiv_1">
+				<div>姓名：<span id="student_name"></span> </div>
+				<div>电话号码：<span id="student_mobile"></span></div>
+			</div>
+			<div class="odiv_1">
+				<div>缴费报名点：<span id="student_zixun_bmd"></span> </div>
+				<div>课程顾问：<span id="student_operator_id"></span></div>
+			</div>
+			<div class="odiv_2">
+				<div>报名点：<input type="text" id="student_ord_id" disabled="disabled" /></div>
+				<div>预留截止：<input type="text" id="student_bligate" disabled="disabled" /</div>
+				</div>
+				<div class="odiv_2">
+					<div> <span class="ospan_2">项目：</span> <input type="text" id="student_project_name" disabled="disabled" /></div>
+					<div>院校：<input type="text" id="student_project_level_name" disabled="disabled" /></div>
+				</div>
+				<div class="odiv_2">
+					<div> <span class="ospan_2">产品包：</span> <input type="text" id="student_product_package" disabled="disabled" /></div>
+					<div> 订金金额：<input type="text" id="student_amount" disabled="disabled" /></div>
+				</div>
+				<div class="odiv_3">
+					<div>
+						<button type="button" class="button button-danger" id="btn_show">确定</button>
+					</div>
+				</div>
+			</div>
+	</body>
+	<script type="text/javascript" src="../assets/bootstrap/js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+	<script type="text/javascript" src="../assets/js/config-min.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/pdf.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/student_registration_list.js"></script>
+
+</html>

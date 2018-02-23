@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+ 	<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+	  <div id="grid"></div>
+	<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+	<script type="text/javascript" src="../assets/js/sea.js"></script>
+	<script type="text/javascript" src="../assets/js/config-min.js"></script>	
+	<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+	<script>
+		BUI.use(['common/search', 'common/page', 'bui/data', 'bui/overlay', 'bui/grid', 'bui/form', 'bui/select', 'bui/calendar'], function(Search, Page, Data, Overlay, Grid, Form, Select, Calendar) {
+		var Store = Data.Store;
+	    var Grid = Grid;
+	    var columns = [
+	    {"title":"1111","dataIndex" :"a"},
+	    {"title":"1111","dataIndex" :"b"},
+	    {"title":"1111","dataIndex" :"c"},
+	    {"title":"1111","dataIndex" :"d"},
+	    ];
+	    var data=[
+	    {"a":"11111","b":"222",c:"333"},
+	    {"a":"22222","b":"333",c:"444"},
+	    {"a":"33333","b":"4444",c:"555"},
+	    {"a":"4444","b":"5555",c:"666"},
+	    ];
+	    var store = new Store({
+		 data:data,
+		   autoLoad:true,
+//		  proxy : { //设置起始页码
+              pageStart :4,
+//          },
+		pageSize: 1,
+	     });
+	   grid = new Grid.Grid({
+		render: '#grid',
+		width:"100%",
+		columns: columns,
+		store: store,
+		bbar: {
+			pagingBar: true
+		},
+		pageSize: 3,
+	    });
+	grid.render();
+		});
+	</script>
+	</body>
+</html>

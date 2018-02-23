@@ -1,0 +1,86 @@
+
+.row_2{
+	border: 1px solid #ccc;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	height: 100%;
+	width: 100%;
+}
+
+.select_1{
+	width: 71%;
+}
+#teacher_name{
+	width: 52%;
+}
+.calendar{
+	width: 25%;
+}
+.row_3{
+	width: 100%;
+	border: 1px solid #ccc;
+	border-top: 0;
+}
+
+.z_stream{
+	height: 50px;
+	line-height: 50px;
+}
+.z_stream lable{
+	padding-left: 20px;
+}
+._pos{
+	cursor: pointer;
+	position: relative;
+ border-top: 1px solid #ccc;
+}
+._pos_lable,._zhuangzhang_lable,._weixin_lable,._zfbao_lable{
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+._pos_lable>div,._zhuangzhang_lable>div,._weixin_lable>div,._zfbao_lable>div{
+	display: inline-block;
+	padding-left: 20px;
+}
+._pos_lable>div:nth-child(2),._zhuangzhang_lable>div:nth-child(2),._weixin_lable>div:nth-child(2){
+ margin-left: 20%;
+}	
+._zfbao_lable>div:nth-child(2){
+	 margin-left: 19%;
+}
+._pos_lable>div:nth-child(4),._zhuangzhang_lable>div:nth-child(4),._weixin_lable>div:nth-child(4),._zfbao_lable>div:nth-child(4){
+	position: absolute;
+	right: 1%;
+}	
+._pos_lable>div:nth-child(4) img,._zhuangzhang_lable>div:nth-child(4) img,._weixin_lable>div:nth-child(4) img,._zfbao_lable>div:nth-child(4) img{
+	width: 19px;
+	height: 9px;
+}	
+._pos_body,._zhuangzhang_body,._weixin_body,._zfbao_body{
+	display: none;
+	width: 100%;
+}	
+._zhuangzhang,._weixin,._zfbao{
+	cursor: pointer;
+	position: relative;
+ border-top: 1px solid #ccc;
+}
+.oa_1{
+	color: black;
+}
+.modal_1{
+	width:95%;
+	display: flex;
+}
+.modal_1>div{
+   width: 33%;	
+}
+.modal_1 input{
+  width:90px;	
+}
+.modal_1 lable{
+   line-height: 30px;	
+}
+

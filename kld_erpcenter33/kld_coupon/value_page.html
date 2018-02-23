@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+	 	<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+	</head>
+	 <style type="text/css">
+	 	select{
+ 		 appearance:none;
+ 		 -moz-appearance:none;
+        -webkit-appearance:none;
+        /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+         padding-right: 14px;
+         background: white;
+         }
+   	  #s1_1_1 div:hover{
+   	  	background: rgb(30,144,255);
+   	  	color: white;
+   	  	cursor:pointer; 
+   	  }
+   	   #s2_1_1 div:hover{
+   	  	background: rgb(30,144,255);
+   	  	color: white;
+   	  	cursor:pointer; 
+   	  }
+   	  
+   </style>
+	<body>
+		
+		<div class="container">
+		<div class="row">
+			<form class="form-panel" style="background: #fffcfc;">
+          <div class="panel-title">
+            <span><label>新建优惠券</label></span>
+          </div>
+          
+          <div style="width: 70%;margin-left: 100px;display: flex;margin-top: 20px;">
+          		<div style="width: 25%;">
+          			 <label>姓名：</label><span id="pmAgent_name" class="detail-text"></span>
+          		</div>
+          		<div style="width: 25%;">
+          			 <label>类型：</label>
+        		 <select id="value_type" class="input-normal"> 
+	                <option>类型</option>
+	                <option value="1">代金券</option>
+	                <option value="0">折扣券</option>
+                </select>
+          		</div>
+          		<div style="width: 25%;">
+          			 <label>折扣：</label>
+        		  <input id="value_cnt" type="text" style="width: 20px;"/>  <span id="ospan2">折</span>
+          		</div>
+          		<div style="width: 25%;">
+          			
+        		 <label>张数：</label>
+        		<input type="text" id="value_amount" placeholder="1~999张" style="width: 35%;" />
+          		</div>
+          </div>
+          <div style="width: 70%;margin-left: 100px;margin-top: 10px;">
+          	<label>使用期限：</label>
+        		<input id="value_sdate"   class="input-small control-text calendar" type="text"><label>&nbsp;-&nbsp;</label><input id="value_edate"  class="input-small control-text calendar" type="text">
+          </div>
+         
+        
+         <!--项目-->
+        <div class="row" style="margin-bottom: 5px;width: 67%;margin-left: 100px;">
+         <div class="" style="padding-top:10px;width: 100%;">
+          <label style="margin-right: 13px;">项目：</label>
+           <select id="project_name" style="width: 91%;margin-left: 1px;background:white;"> </select>
+         </div>
+          </div> 
+         <!--院校-->
+         <div class="row" id="row_yx" style="margin-left: 100px;margin-top:16px;width: 67%;position: relative;">
+         	<div class="" style="width: 100%;height: 80px;display:flex;">
+             <div style="line-height: 80px;width: 39px;">院校：</div> 
+              <!--操作数据-->
+             <div class="" id="s1_1_2" style="border: 1px solid #ccc;width:91%;margin-left: 15px;overflow-y: auto;">
+             	
+             </div>
+          </div>
+          <!--隐藏-->
+          <div class="odiv1" style="border:1px solid #ccc; width: 91%;position: absolute;margin-left: 54px;z-index: 100;background: white;display: none;">
+          	<div style="padding: 5px;">
+          		<!--搜索-->
+          		<input type="text"  id="search_input" style="width: 96%;"  placeholder="请输入搜索内容"/>
+          	</div>
+          	<!--下拉-->
+          	<div id="s1_1_1" style="width: 100%;height: 70px;overflow-y: auto;border-top: 1px solid #ccc;">         		
+          	</div>
+          </div>
+         </div>
+         <!--产品包-->
+         <div class="row" id="row_yx2" style="margin-left: 113px;margin-top:16px;width: 67%;position: relative;">
+         	 <div class="" style="width: 100%;height: 80px;display:flex;">
+             <div style="line-height: 80px;margin-left: -12px;width: 50px;">产品包：</div> 
+              <!--操作数据-->
+             <div class="" id="s2_1_2" style="border: 1px solid #ccc;width:91%;margin-left: 4px;overflow-y: auto;">
+             	
+             </div>
+            </div>
+              <!--隐藏-->
+          <div class="odiv2" style="border:1px solid #ccc; width: 91%;position: absolute;margin-left: 40px;z-index: 100;background:white;display: none;">
+          	<div style="padding: 5px;">
+          		<!--搜索-->
+          		<input type="text"  id="search_input2" style="width: 96%;"  placeholder="请输入搜索内容"/>
+          	</div>
+          	<!--下拉-->
+          	<div id="s2_1_1" style="width: 100%;height: 90px;overflow-y: auto;border-top: 1px solid #ccc;">
+          		
+          	</div>
+          </div>
+         </div> 
+         <br />
+	</div>	
+	<div style="position: relative;">
+		<div style="position: absolute; right: 50px;">
+			<button type="button" id="btn_success" class="button button-success">确认</button>
+			<a type="button" href="value_voucher.html"  class="button button-default">返回</a>
+		</div>
+		
+	</div>
+
+	
+		<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+		<script type="text/javascript" src="../assets/js/sea.js"></script>
+		<script type="text/javascript" src="../assets/js/bui.js"></script>
+		<script type="text/javascript" src="../assets/js/config-min.js"></script>
+		<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+		<script type="text/javascript" src="../assets/kld_js/value_page.js"></script>
+	</body>
+</html>

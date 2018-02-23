@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../assets/assrts_css/new_package.css" />
+		<style>
+			select {
+				appearance: none;
+				-moz-appearance: none;
+				-webkit-appearance: none;
+				/*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+				padding-right: 14px;
+				background: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span24">
+					<div class="panel">
+						<div class="panel-header">
+							<h3 class="_name"></h3>
+						</div>
+						<div class="panel-body">
+							<form id="searchForm1">
+								<!--body主体-->
+								<div class="row_body">
+									<!--row_1-->
+									<div class="row_1">
+										<!---->
+										<div>
+											<div>
+												<label>产品包名称：</label>
+												<input type="text" id="package_name" />
+											</div>
+										</div>
+										<!---->
+										<div class="span18 bui-form-group-select" data-type="type1">
+											<div>
+												<label>大区：</label>
+												<select id="org_region_id" class="select_dq_2">
+													<option>--请选择--</option>
+												</select>
+											</div>
+											<div>
+												<label class="oable_1">一级项目：</label>
+												<select id="pro_first_id_2">
+													<option>--请选择--</option>
+												</select>
+											</div>
+											<div>
+												<label class="oable_2">二级项目：</label>
+												<select id="pro_second_id_2">
+													<option value="请选择">--请选择--</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<!--row_2-->
+									<div class="row_2">
+										<div>
+											<label>产品开始时间：</label>
+											<input type="text" id="product_start_time" class="calendar" style='width:125px;'>
+										</div>
+										<div>
+											<label>&nbsp;产品结束时间：</label>
+											<input type="text" id="product_end_time" class="calendar" style='width:125px;'>
+										</div>
+										<div>
+											<label class="oable_3">优惠数量：</label>
+											<input type="text" id="discount_number" />
+										</div>
+										<div>
+											<label class="oable_4">最低价格：</label>
+											<input type="text" disabled="disabled" id="input_lowest" />
+										</div>
+									</div>
+									<!--row_3-->
+									<div class="row_3">
+										<div>
+											<label class="">优惠开始时间：</label>
+											<input type="text" disabled="disabled" id="happy_start_hour" class="calendar1" />
+										</div>
+										<div>
+											<label class="control-label">&nbsp;优惠结束时间：</label>
+											<input type="text" disabled="disabled" id="happy_end_hour" class="calendar1" />
+										</div>
+										<div>
+											<label class="oable_5">售卖价格：</label>
+											<input type="text" id="package_price" disabled="disabled" />
+										</div>
+										<div></div>
+									</div>
+									<!--row_4-->
+									<div class="row_4" id="type_zhifu">
+										<bdi>支付类型：<bdi>
+						</div>
+						 <!--、、、、、、-->
+							 <div class="row_6_1">
+							 	 <!--row_6-->
+							<div class="row_6">
+							<div >
+								<!--header-->
+								<div class="row_header">
+									<div>班型名称</div>
+									<div>班型开始时间</div>
+									<div>班型结束时间</div>
+									<div>班型标准价</div>
+									<div>班型最低价</div>
+									<div>班型定价</div>
+									<div>优惠比例(%)</div>
+									<div class="otr">操作</div>
+								</div>
+								<!--body-->
+								<div class="row_6_body">
+								
+								</div>
+							</div>
+						</div>
+							 </div>
+						<!--row_5-->  
+						<div class="row_5" style="position: relative;">
+							<div class="display_none" ></div> 
+							 <label id="obla_1" >班型选择：</label>
+							 <div id="odiv1" >
+							 	<div class="odiv2">
+				                 <!--显示内容-->
+				                 <div id="class_type" class="foo_show">               	
+				                 </div>			                 
+				                 <!--隐藏-->
+				                 <div class="class_select" >
+				                 	<!--搜索-->
+				                 	<div>
+				                 		<input  type="text" name="" id="class_input" style="" placeholder="输入搜索内容" />
+				                 	</div>
+				                 	<!--下拉数据-->
+				                 	<div id="class_select"></div>
+				                 </div>
+				              </div> 
+							 </div>	
+						</div>
+						
+						
+						<!--row_7-->
+						<div class="row_7">
+							<lable>产品包描述：</lable>
+							<div id="package_mark" contenteditable="true">
+							</div>
+						</div>
+						<!--ROW_8-->
+						<div class="row_8">
+							<div>
+								<button type="button" class="button button-danger">提交</button>
+								<button type="button" class="button button-default">返回</button>
+							</div>
+						</div>
+					</div>
+					 </form>	
+				</div>
+				</div>
+				</div>
+		  </div>
+		</div>
+		
+	<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+	<script type="text/javascript" src="../assets/js/config-min.js"></script>	
+	<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/new_package.js"></script>
+	</body>
+</html>

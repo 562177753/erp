@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>卡拉荻|ERP系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Pragma" content="no-cache">    
+	<meta http-equiv="Cache-Control" content="no-cache">    
+	<meta http-equiv="Expires" content="0">    
+	
+	<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+ 	<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<form class="form-panel">
+          <div class="panel-title">
+            <span>
+              <label>分校报名>学员报名>报名单详情</label></span>
+          </div>
+        <div class="row detail-row" style="margin-bottom: 5px;">
+         <div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>姓名：</label><span id="sp0" class="detail-text"></span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>手机号：</label><span id="sp1" class="detail-text"></span>   
+          </div>
+          
+          <div class="span8" style="padding-top:10px">
+          <label>学历：</label><span id="sp2" class="detail-text"></span>
+          </div>
+        </div>   
+        
+        <div class="row detail-row" style="margin-bottom: 5px;">
+         <div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>证件类型：</label><span id="sp3" class="detail-text"></span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>证件号码：</label><span id="sp4" class="detail-text"></span>   
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>项目：</label><span id="project_name" class="detail-text"></span>
+          </div>
+        </div>
+          
+        <div class="row detail-row" style="margin-bottom: 5px;">
+         <div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>院校：</label><span id="project_level_name" class="detail-text"></span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>产品包：</label><span id="product_name" class="detail-text"></span>   
+          </div>
+           <div class="span8" style="padding-top:10px">
+          <label>专业：</label><span id="specialty_id" class="detail-text"></span>   
+          </div>    
+        </div>
+        
+          <div class="row detail-row" style="margin-bottom: 5px;">
+          	<div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>报名日期：</label><span id="apply_time" class="detail-text"></span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>报名点：</label><span id="reg_loc_id" class="detail-text"></span>
+          </div>
+           <div class="span8" style="padding-top:10px">
+          <label>课程顾问：</label><span id="operator_id" class="detail-text"></span>
+          </div>
+          </div>	
+          
+        <div class="row detail-row" style="margin-bottom: 5px;">
+         <div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>培训费用：</label><span id="training_fee" class="detail-text"></span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>官方考试费：</label><span id="authority" class="detail-text">0</span>   
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>尚德代报费：</label><span id="exam_agent_fee" class="detail-text">0</span>
+          </div>
+        </div>  
+          
+         <div class="row detail-row" style="margin-bottom: 5px;">
+         <div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>其他费用：</label><span id="other_fee" class="detail-text">0</span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>优惠费用：</label><span id="offer_amount" class="detail-text"></span>   
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>订单总计：</label><span id="total_amount" class="detail-text"></span>
+          </div>
+        </div>   
+          
+         <div class="row detail-row" style="margin-bottom: 5px;">
+         <div class="span8" style="margin-left: 100px; padding-top:10px">
+          <label>实际已付：</label><span id="paidup_amount" class="detail-text"></span>
+          </div>
+          <div class="span8" style="padding-top:10px">
+          <label>订单状态：</label><span id="ord_status_code" class="detail-text"></span>   
+          </div>
+           <div class="span8" style="padding-top:10px">
+          <label>缴费类型：</label><span id="method_rel_code" class="detail-text"></span>
+         </div>
+         
+        </div>
+          
+        <div class="row detail-row" style="margin-bottom: 5px;">
+	         <div class="span8" style="margin-left: 100px;padding-top:10px">
+	          <label>订金总额：</label><span id="subscription_fee" class="detail-text"></span>   
+	          </div>
+	           <div class="span8" style="padding-top:10px">
+	          <label>指定院校：</label><span id="relief_product" class="detail-text">否</span>
+	          </div>
+	         <div class="span8" style="padding-top:10px">
+	          <label>是否接受调剂：</label><span id="whether_relief" class="detail-text"></span>
+	          </div>
+        </div>  
+          
+        <div class="row detail-row" style="margin-bottom: 5px;">
+          <div class="detail-actions" style="text-align:center">
+            <a class="button button-warning btn_fanhui" href="#" id="close"> 返 回 </a>
+          </div>
+        </div> 
+        </form>
+		</div>
+		
+		</div>
+	<footer><div style="height:30px"></div></footer>
+	<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+	<script type="text/javascript" src="../assets/js/config-min.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+    
+    <script type="text/javascript" src="../assets/kld_js/order_details_list.js"></script>
+</body>
+</html>
+
+
+
+

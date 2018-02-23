@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>卡拉荻|ERP系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+	<meta http-equiv="Pragma" content="no-cache">    
+	<meta http-equiv="Cache-Control" content="no-cache">    
+	<meta http-equiv="Expires" content="0"> 
+    <script type="text/javascript" src="../assets/bootstrap/js/jquery-1.10.2.min.js"></script>
+ 	<script type="text/javascript" src="../assets/bootstrap/js/bootstrap-select.js"></script>    
+    <link rel="stylesheet" type="text/css" href="../assets/bootstrap/css/bootstrap-select.css">    
+    <link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">  
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script> 
+	<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+ 	<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+ 	<link rel="stylesheet" href="../assets/assrts_css/pay_student_registration_list.css" />
+ 	<style>
+ 		select{
+ 		 appearance:none;
+ 		 -moz-appearance:none;
+        -webkit-appearance:none;
+        /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+         padding-right: 14px;
+         background: white;
+         }
+         #select_sect div:hover{
+         	background: rgb(50,118,177);
+         	color:white
+         }
+ 	</style>
+</head>   
+<body>
+	<div class="container">
+		<div class="row-fluid">
+			<form class="form-panel">
+          <div class="panel-title">
+            <span>
+              <label>分校报名>学员报名>修改报名单>学员概要信息</label></span>
+          </div>
+        <div class="row detail-row" style="margin-bottom: 0px;">
+         <div class="span6" style="margin-left: 8%;width:30%;padding-top:5px">
+          <label>姓名：</label><span id="sp_name" class="detail-text"></span>
+          </div>
+          <div class="span6" style="width:30%;padding-top:5px">
+          <label>最高学历：</label><span id="sp_xl" class="detail-text"></span>
+          </div>
+          <div class="span6" style="width:30%;padding-top:5px">
+          <label>手机号：</label><span id="sp_phone" class="detail-text"></span>   
+          </div>
+        </div>   
+        
+        <div class="row detail-row" style="margin-bottom: 0px;">
+        <div class="span6" style="margin-left: 8%;width:30%;padding-top:5px">
+          <label>QQ：</label><span id="sp_qq" class="detail-text"></span>
+          </div>
+         <div class="span6" style="width:30%;padding-top:5px">
+          <label>证件类型：</label><span id="sp_lx" class="detail-text"></span>
+          </div>
+          <div class="span6" style="width:30%;padding-top:5px">
+          <label>证件号码：</label><span id="sp_sf" class="detail-text"></span>   
+          </div>
+        </div>
+        
+        </form>
+		</div>
+		
+		<div class="row-fluid ">
+			<form id="J_form2" class="form-panel">
+          <div class="panel-title">
+            <span>
+              <label>课程信息</label></span>
+          </div>
+          
+        <!--body-->
+        <div class="row_body">
+        	<!--一行-->
+        	<form id="J_form2" class="form-panel">
+        	<div  class="controls bui-form-group-select row_1" data-type="type0">
+        		<div>
+        			<label>项目：</label>
+        			 <select id="select_xm" ></select>
+        		</div>
+        		<div>
+        			<label>院校：</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        			<select id="select_yx"></select> 
+        		</div>
+        		<div>
+        		 <label>产品包：</label>
+				 <select id="select_bx" ><option>第三级</option></select>        				
+        		</div>
+        	</div>
+        	</form>
+        	<!--第二行-->
+        	<div class="row_1">
+        		<div>
+        			 <label>产品包价格：</label>
+        			 <span id="select_jg"></span>
+        		</div>
+        		<div class="odiv_1">
+        			<label>优惠码：</label>
+        			  <input type="text"   id="select_yhm" />
+        			   <!--箭头-->
+			           <a href="#" id="a_png" >
+			           	<img  src="../assets/kld_js/png_1.png" alt="向下箭头" />
+			           </a>
+			           <!--下拉框-->
+			           <div id="select_sect" style=""> </div>      
+        		</div>
+        		<div class="">
+        				 <label>优惠金额：</label>
+        			  <span id="select_yhje"></span>
+        			 
+        				 <label>应交金额：</label>
+        			    <span id="select_jyje"></span>
+        		</div>
+        	</div>
+        	<!--第三行-->
+        	<div class="row_1">
+        		<div>
+        			  <label>参加考期：</label>    
+		     		 <input type="text" id="select_kq" >
+        		</div>
+        		<div>
+        			 <label>是否接受调剂：</label>
+        			 <label class="radio-inline">
+		  <input type="radio" name="optionsRadiosinline" id="optionsRadios2" value="0" checked> 否</label>
+          <label class="radio-inline">
+		  <input type="radio" name="optionsRadiosinline" id="optionsRadios1" value="1" > 是</label>
+        		</div>
+        		<div>
+        			<label>指定调剂院校：</label>
+           			<select  id="relief_product"></select>     
+        		</div>
+        	</div>
+        </div>    
+        </form>
+		</div>
+		
+		
+		<div class="row-fluid">
+			<div class="detail-actions" style="text-align:right">
+			<input type="button" class="button button-success"  href="#" id="a_bcun" value="保存">
+			<input type="button" class="button button-info" href="#" id="bao_payment" data-toggle="modal" value="保存并缴费" >  
+			<a class="button button-primary" href="#" id="wei_nm"> 咨询未报名  </a>
+            <a class="button button-default" href="#" id="btn_fanhui"> 返 回  </a>
+          </div>
+		</div>
+    
+		</div>
+		<!--产品包缴费-->
+ <div class="modal fade" id="Product_Suites" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <form id="" class="form-horizontal"> 
+       	
+            <div class="modal-body" style="padding-right: 0px;position: relative;">
+   	           <div id="protocol" style="width: 100%;;height: 300px;overflow-y: auto;border: 1px solid #ccc;">
+                  
+				<canvas id="the-canvas"></canvas> 
+				
+				 <div style="width: 200px;margin-left: 330px;">
+   	           	  <input type="button"  id="prev" value="上一页">
+				  <input type="button"   id="next" value="下一页">
+				  &nbsp; &nbsp;
+				  <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+   	               <label style="display: none;" id="Protocol_button"> <input type="checkbox"  id="protocol_ordio"   />  <span>同意培训服务协议</span></label>
+   	           </div>
+				
+   	           </div>
+   	           </div>
+   	           
+   	          
+   	           <div style="margin-left:15px;color: red;" id="bear_fruit"></div>
+   	           <div id="footer_caozuo" style="width: 100%;height: 40px;margin-bottom: -7px;">
+   	           	   <div id="" style="margin-bottom: 5px;">
+   	           	   	 <input type="text" name="" id="ValidateBox" style="margin-left: 13px;margin-right: 28px;" placeholder="请输入验证码" />    
+   	           	    <input type="button" id="Get_verification_code"  value="获取验证码" style="margin-right: 14px;">
+   	           	   </div>
+   	           	   <div id="" style="margin-left: 14px;">
+   	           	   <input type="text" disabled="disabled" id="mobile_select" style="width: 140px;height: 25px;margin-right: 5px;"> 
+   	           	   <span style="color: red;margin-left: 15px;">*</span> 此手机号应为学员报名的手机号，即个人中心的账号。
+   	           	   </div>           	  
+   	           </div>
+       </form>
+    </div>
+<!--end-产品包缴费-->
+
+		<!--产品包缴费2-->
+ <div class="modal fade" id="Product_Suites2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <form id="" class="form-horizontal"> 
+       	
+            <div class="modal-body" style="padding-right: 0px;position: relative;">
+   	           <div id="protocol2" style="width: 100%;;height: 300px;overflow-y: auto;border: 1px solid #ccc;">
+                  
+				<canvas id="the-canvas2"></canvas> 
+				
+				 <div style="width: 200px;margin-left: 330px;">
+   	           	  <input type="button"  id="prev2" value="上一页">
+				  <input type="button"   id="next2" value="下一页">
+				  &nbsp; &nbsp;
+				  <span>Page: <span id="page_num2"></span> / <span id="page_count2"></span></span>
+   	               <label style="display: none;" id="Protocol_button2"> <input type="checkbox"  id="protocol_ordio2"   />  <span>同意培训服务协议</span></label>
+   	           </div>
+				
+   	           </div>
+   	           </div>
+   	           
+   	          
+   	           <div style="margin-left:15px;color: red;" id="bear_fruit2"></div>
+   	           <div id="footer_caozuo2" style="width: 100%;height: 40px;margin-bottom: -7px;">
+   	           	   <div id="" style="margin-bottom: 5px;">
+   	           	   	 <input type="text" name="" id="ValidateBox2" style="margin-left: 13px;margin-right: 28px;" placeholder="请输入验证码" />    
+   	           	    <input type="button" id="Get_verification_code2"  value="获取验证码" style="margin-right: 14px;">
+   	           	   </div>
+   	           	   <div id="" style="margin-left: 14px;">
+   	           	   <input type="text" disabled="disabled" id="mobile_select2" style="width: 140px;height: 25px;margin-right: 5px;"> 
+   	           	   <span style="color: red;margin-left: 15px;">*</span> 此手机号应为学员报名的手机号，即个人中心的账号。
+   	           	   </div>           	  
+   	           </div>
+       </form>
+    </div>
+<!--end-产品包缴费2-->
+
+
+		<footer><div style="height:30px"></div></footer>
+	<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+	<script type="text/javascript" src="../assets/js/config-min.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/pdf.js"></script>
+	<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+  
+  <script type="text/javascript" src="../assets/kld_js/pay_student_registration_list.js"></script>
+</body>
+</html>

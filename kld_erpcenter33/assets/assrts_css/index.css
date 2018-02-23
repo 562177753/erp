@@ -1,0 +1,19 @@
+#_header{
+	position: relative;
+}
+#ldang{
+	color: rgb(193,213,236);
+	display: flex;
+	right: 0;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+}
+#ldang>div:nth-child(1){
+ width: 50px;	
+}
+#ldang>div:nth-child(2){
+	margin-right: 10px;
+	text-align: center;
+	width: 16px;
+}

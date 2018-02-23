@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>卡拉荻|ERP系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/assrts_css/sales_product_list.css" type="text/css" rel="stylesheet" />
+    <style>
+    	select{
+ 		 appearance:none;
+ 		 -moz-appearance:none;
+        -webkit-appearance:none;
+        /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+         padding-right: 14px;
+         background: white;
+         }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span24">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>查询条件</h3>
+                </div>
+                <div class="panel-body">
+             	
+                    <form id="searchForm" class="form-horizontal">
+                    	<div class="form_1">
+                    	   
+                    	     <div class="f_2 bui-form-group-select" data-type="type0">
+                    	     	 <div class="of_1">
+                    	    	 <label >大区:</label>
+                    	    	  <select class="select_1 select_dq" style="" id="area_id" >
+                                    	<option value="">--请选择--</option>
+                                    </select>
+                    	          </div>
+                    	    	<div class="of_1">
+                    	    		 <label >项目:</label>
+                    	    		   <select id="pro_first_id" style="" class="select_2"></select>
+                    	    	</div>
+                    	    	<div class="of_1">
+                    	    		    <label >学院:</label>
+                    	    		    <select id="pro_second_id" style="" class="select_3"></select>
+                    	    	</div>
+                    	    </div>
+                    	    <div class="f_3">
+                    			 <label >产品包名称:</label>
+                    			  <input type="text" style="width: 103px;" id="class_name" class="control-text">
+                    		</div>
+                    	</div>
+                    	
+                    	<div class="form_1">
+                    		<div class="f_1">
+                    			 <label >产品包状态:</label>
+                    			 <select id="status_code" class="select_4">
+                                         <option value="">-请选择-</option>
+                                         <option >上架</option>
+                                         <option >下架</option>
+                                    </select>
+                    		</div>
+                    		<div class="f_4">
+                    			<div >
+                    				<button type="button" id="btnSearch" class="button button-primary">搜索</button>
+                                <button type="button" id="btn_cz" class="button button-warning" >重置</button>
+                    			</div>
+                    		</div>
+                    		
+                    	</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row-fluid">
+        <div class="span24">
+            <div class="panel">
+                <div class="panel-header clearfix">
+                    <h3 class="pull-left">查询列表</h3>
+                    <div class="pull-right">
+                    	<!--sales_new_product.html-->
+                        <a href="#" id="NEW_grounding" class="button button-small">新建新产品</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="search-grid-container">
+                        <div id="grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--弹框-->
+	<div id="modal_up"></div>
+
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/sea.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+<script type="text/javascript" src="../assets/kld_js/sales_product_list.js"></script>
+</body>
+</html>

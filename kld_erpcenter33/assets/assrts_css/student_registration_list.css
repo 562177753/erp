@@ -1,0 +1,259 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#grid div{
+	width: 100%;
+}
+
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	/*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+	padding-right: 14px;
+}
+
+
+/**内容超出 出现滚动条 **/
+
+#bui-stdmod-body {
+	height: 50px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+
+#tanchu {
+	background: black;
+	opacity: 0.5;
+	height: 100%;
+	width: 100%;
+	display: none;
+	left: 0;
+	top: 0;
+	z-index: 300;
+	position: fixed;
+}
+
+#tanchu_2 {
+	display: none;
+	border: 1px #ccc solid;
+	border-radius: 5px 5px;
+	width: 500px;
+	height: 330px;
+	background: white;
+	z-index: 500;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -165px;
+	/*display: none;*/
+}
+
+#tanchu_2>div:nth-child(1) {
+	border-radius: 5px 5px 0 0;
+	width: 100%;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	/*margin-left: 10px;*/
+	border-bottom: 1px solid #ccc;
+}
+.odiv_1{
+	font-size: 12px;
+	font-weight: bold;
+	width: 95%;
+	margin: 20px auto;
+}
+.odiv_1>div:nth-child(1),.odiv_1>div:nth-child(2){
+  display: inline-block;
+  width: 49%;
+	
+}	
+.odiv_2{
+	font-size: 12px;
+	font-weight: bold;
+	width: 95%;
+	margin: 20px auto;
+}
+.odiv_2>div:nth-child(1),.odiv_2>div:nth-child(2){
+  display: inline-block;
+  width: 49%;	
+}
+#tanchu_2 input{
+ 	width: 120px;
+}
+#student_project_name{
+	margin-left: 29px;
+}
+#student_project_level_name{
+	margin-left: 22px;
+}
+#student_product_package{
+	margin-left: 17px;
+}
+#student_ord_id{
+	margin-left: 22px;
+}
+.odiv_3{
+	height: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	width: 100%;
+	border-top: 1px solid #ccc;
+	margin: 20px auto;
+	position: relative;
+}
+.odiv_3>div{
+	margin-top: 10px;
+position: absolute;
+right: 30px;
+}	
+
+
+#home_phone_1{
+	height: 20px;
+}
+
+#home_name_1{
+	height: 20px;
+}
+#grid{
+/*	margin: 0 auto;*/
+}
+#grid .bui-grid-body{
+	/*overflow-x: hidden;*/
+}
+.h_3{
+    line-height: 45px;
+	height: 45px;
+}
+.oable_1{
+	margin-left: 20px;
+}
+.h3_1{
+	line-height: 30px;
+	height: 30px;
+}  
+.h3_2{
+	line-height: 45px;
+	height: 45px;
+}
+.row_div_1{
+	margin-left: 50px;
+	 padding-top:10px;
+}
+.row_div_2{
+	padding-top:10px;
+}
+.row_div_3{
+	margin-left: 50px;
+	margin-top: 5px;
+}
+.row_div_4{
+	margin-top: 5px;
+}
+#p1,#p2{
+	margin-left: 0px;
+}
+#grid_registration_list,#grid_earnest_list{
+	width: 100%;
+}
+.row_div_6{
+	margin-left:30px;
+}
+#earnest_student_registration_modal{
+	display: none;
+}
+.row_div_7{
+	margin-left:50px;
+}
+.row_div_8{
+	margin-left: 17px;
+}
+.row_div_9{
+	padding-left: 2.4%;
+}
+#datetimepicker{
+	height: 20px;
+	width:170px;
+}
+.row_div_10{
+	padding-left: 4%;
+}
+.row_div_11{
+	padding-left: 6%;
+}
+#id_yx{
+	width: 195px;
+}
+.row_div_12{
+	margin-left: 21px;
+}
+#id_bx{
+	width: 166px;
+}
+.row_div_13{
+	margin-left: 23px;
+}
+#stu_djje{
+	height: 20px;
+	width:168px;
+}
+.row_div_14{
+	padding-right: 70px;
+}
+.ospan_1{
+	color: red;
+}
+#btn_name_1{
+	height: 20px;
+}
+.row_div_15{
+	margin-left:50px;
+}
+#btn_zj_1{
+	width: 166px;
+	height: 30px;
+}
+#btn_riqi_1{
+	width: 140px;
+	height: 20px;
+}
+#btn_zjh_1,#name_2,#btn_sex,#btn_phone_2{
+	height: 20px;
+}
+#counselor_attach,#btn_qq_1,#btn_em,#btn_huju_1,#btn_hj_2,#schoolofgraduation,#btn_identity_id_1,#btn_phone_1,#btn_em_2,#btn_jt_phone,#btn_qq_2,#btn_bg_phone,#btn_wx_1,#workyear_2,#btn_jj,#btn_jj_phone,#graduate_institutions{
+	height: 20px;
+}
+#xingzen_modal{
+	display: none;
+}
+.row_div_16{
+	padding-right: 70px;
+}
+#btn_identity_type_code,#order,#sex_code,#btn_xueli_2,#btn_xueli_1{
+	width: 166px;
+	height: 30px;
+}
+#datetimepicker_2{
+    width: 140px;
+	height: 20px;
+}
+#workyear{
+	width:58%;
+	height: 20px;
+}
+footer>div{
+	height:30px
+}
+.ospan_2{
+	margin-left: -10px;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>卡拉荻|ERP系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/assrts_css/daily_summary.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+  <div class="container">
+      <div class="row row_2">
+      	  	<!--分校-->
+                  <div class="span4 span_1">
+                    <lable>分校：</lable>
+           			<select class="select_1">  
+           				
+          			</select> 
+                  </div>
+           <!--教师姓名-->
+              <div class="span5 span_2">
+             	<lable>教师姓名：</lable>
+                <input type="text" id="teacher_name"/>              			
+              </div>     
+           <!--开始结束时间-->
+             <div class="span10">
+                <label>起始时间：</label>
+                 <input type="text" class="calendar" id="start_time"/>-
+                 <input type="text" id="end_time" class="calendar" />
+            </div>
+            <!--查询-->
+            <div class="span4">
+             <button class="button button-primary" id="seach">查询</button>
+             <button class="button button-default">重置</button>
+            </div>
+            
+      	 </div>
+      	 <div class="row row_3">
+           <!--总流水-->
+            <div class="z_stream">
+               <lable>今日总流水：</lable>
+               <span id=""></span>
+            </div>
+            <!--pos-->
+            <div class="_pos">
+            	<!--说明LAN-->
+            	<a class="_pos_lable oa_1">
+            		<div>POS:</div>
+            		<div>今日收 <span></span> &nbsp;&nbsp;笔POS,</div>
+            		<div>总计￥ <span></span></div>
+            		<div><img src="../assets/kld_js/xs.png" class="oimg_1" alt="向下" /></div>
+            	</a>
+            	<!--body-->
+            	<div class="_pos_body">  
+            	  <div id="grid"></div>
+            	</div>
+            </div>
+            <!--转账-->
+            <div class="_zhuangzhang">
+            	<!--说明LAN-->
+            	<a class="_zhuangzhang_lable oa_1">
+            		<div>转账:</div>
+            		<div>今日收 <span></span> &nbsp;&nbsp;笔转账,</div>
+            		<div>总计￥ <span></span></div>
+            		<div><img src="../assets/kld_js/xs.png" class="oimg_2" alt="向下" /></div>
+            	</a>
+            	<!--body-->
+            	<div class="_zhuangzhang_body"> 
+            	   <div id="grid2"></div>
+            	</div>
+            </div>
+             <!--微信-->
+            <div class="_weixin">
+            	<!--说明LAN-->
+            	<a class="_weixin_lable oa_1">
+            		<div>微信:</div>
+            		<div>今日收 <span></span> &nbsp;&nbsp;笔微信,</div>
+            		<div>总计￥ <span></span></div>
+            		<div><img src="../assets/kld_js/xs.png"  class="oimg_3" alt="向下" /></div>
+            	</a>
+            	<!--body-->
+            	<div class="_weixin_body">   
+            	   <div id="grid3"></div>
+            	</div>
+            </div>
+            <!--支付宝-->
+            <div class="_zfbao">
+            	<!--说明LAN-->
+            	<a class="_zfbao_lable oa_1">
+            		<div>支付宝:</div>
+            		<div>今日收 <span></span> &nbsp;&nbsp;笔微信,</div>
+            		<div>总计￥ <span></span></div>
+            		<div><img src="../assets/kld_js/xs.png" class="oimg_4" alt="向下" /></div>
+            	</a>
+            	<!--body-->
+            	<div class="_zfbao_body"> 
+            	 <div id="grid4"></div>
+            	</div>
+            </div>
+      	 </div>
+   </div>
+   
+   <!--弹框-->
+    <div class="modal fade" id="modal" style="display: none;">
+				<div class="modal-body">
+					<div class="modal_1">
+						<div>
+							<label>单号：</label>
+							<input type="text" style="margin-left: 22px;" />
+						</div>
+						<div>
+							<lable>学生姓名：</lable>
+							<span></span>
+						</div>
+						<div>
+							<lable>操作人：</lable>
+							<span></span>
+						</div>
+					</div>
+					<div class="modal_1">
+						<div>
+							<label style="line-height: 30px;">支付类型：</label>
+							<span></span>
+						</div>
+						<div>
+							<lable>班型：</lable>
+							<span></span>
+						</div>
+					</div>
+					<div class="modal_1">
+						<div>
+							<lable>支付方式：</lable>
+							<input type="text" />
+						</div>
+						<div>
+							<lable>支付名称：</lable>
+							<input type="text" />
+						</div>
+						<div>
+							<lable>金额：</lable>
+							<input type="text" />
+						</div>
+					</div>
+				</div>
+		</div>
+   
+    <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/sea.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+<script type="text/javascript" src="../assets/kld_js/daily_summary.js"></script>
+	</body>
+</html>

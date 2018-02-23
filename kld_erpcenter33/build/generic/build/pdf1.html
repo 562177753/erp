@@ -1,0 +1,60 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    </style>
+    <script src="pdf.js" type="text/javascript"></script>
+    <script type="text/javascript">
+         function showPdf() {
+            var container = document.getElementById("container");
+            container.style.display = "block";
+//          var url = convertDataURIToBinary('${encodeBase64}');//encodeBase64是后台传递的Base64编码的二进制字符串
+		    var url = "3.pdf";
+            PDFJS.workerSrc = 'pdf.worker.js';
+            PDFJS.getDocument(url).then(function getPdfHelloWorld(pdf) {
+               var $pop = $('#pop');
+                var shownPageCount = pdf.numPages                
+ var getPageAndRender = function (pageNumber) {
+                pdf.getPage(pageNumber).then(function getPageHelloWorld(page) {
+                         var scale = 2;
+                         var viewport = page.getViewport(scale);
+                         var $canvas = $('<canvas></canvas>').attr({
+                             'height': viewport.height,
+                             'width': viewport.width
+                         });
+                         $pop.append($canvas);
+                         
+                         page.render({//设置渲染方式
+                            canvasContext: $canvas[0].getContext('2d'),//二维绘图环境
+                             viewport: viewport
+                         });
+                     });
+                  if (pageNumber < shownPageCount) {
+                         pageNumber++;
+                         getPageAndRender(pageNumber);
+                     }  
+                };
+                getPageAndRender(1);            
+            });
+            
+        }
+  function convertDataURIToBinary(dataURI) { //将encodeBase64解码
+            var raw = window.atob(dataURI);// 进行解码
+            var rawLength = raw.length;
+            //转换成pdf.js能直接解析的Uint8Array类型,见pdf.js-4068
+            var array = new Uint8Array(new ArrayBuffer(rawLength));  
+            for(i = 0; i < rawLength; i++) {
+              array[i] = raw.charCodeAt(i); //charCodeAt() 方法可返回指定位置的字符的 Unicode 编码。
+            }
+            return array;
+         }
+    </script>
+</head>
+<body>
+     <div id="container" style="display: none;">
+        <div id="pop" class="pop">
+        </div>
+</div>
+</body>
+</html>

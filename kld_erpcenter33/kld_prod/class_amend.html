@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>卡拉荻|ERP系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .control-number::-webkit-outer-spin-button,
+        .control-number::-webkit-inner-spin-button {
+            -webkit-appearance: none !important;
+        }
+
+        .control-number {
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            padding: 4px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+        <div class="row-fluid">
+            <div class="span24">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>班型基本信息修改</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form id="J_Form" class="form-horizontal">
+                        <div class="row">
+                            <div class="control-group span8 span-first">
+                                <label class="control-label">项目</label>
+                                <div class="controls">
+                                    <input type="text" value=" " id="project" readonly="readonly">
+                                    <!--<span id="project"></span>-->
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label">   院校</label>
+                                <div class="controls">
+                                    <input name="c" type="text" value="" id="school" class="control-text"
+                                           readonly="readonly">
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>班型名称</label>
+                                <div class="controls">
+                                    <input name="d" type="text" value="" id="class_name" class="control-text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="control-group span8 span-first">
+                                <label class="control-label">班型状态</label>
+                                <div class="controls">
+                                    <input type="text" id="status" value="" readonly="readonly">
+                                    <!--<select id="status">-->
+                                    <!--<option value="上架">上架</option>-->
+                                    <!--<option value="下架">下架</option>-->
+                                    <!--</select>-->
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>计划招生</label>
+                                <div class="controls">
+                                    <input id="plan_num" value="" type="number" class="control-number">
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>标准价格</label>
+                                <div class="controls">
+                                    <input type="number" value="" id="class_price" class="control-number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="control-group span8 span-first">
+                                <label class="control-label"><s>*</s>最低价格</label>
+                                <div class="controls">
+                                    <input type="number" id="class_cost" value="" class="control-number">
+                                </div>
+                            </div>
+                            <!--<div class="control-group span8">-->
+                            <!--<label class="control-label"><s>*</s>班型售卖价格</label>-->
+                            <!--<div class="controls">-->
+                            <!--<input id="class_selling_price" type="number" class="control-number">-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>标准价格分成(%)</label>
+                                <div class="controls">
+                                    <input type="text" id="price_standard" value=" " class="control-text"
+                                           data-rules="{required:true}">
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label" style="width:113px;"><s>*</s>非标准价格分成(%)</label>
+                                <div class="controls">
+                                    <input type="text" id="price_nonstandard" class="control-text" value=" ">
+                                </div>
+                            </div>
+
+                            <div class="control-group span8 span-first">
+                                <label class="control-label"><s>*</s>班型开始售卖时间</label>
+                                <div class="controls">
+                                    <input id="class_start_time" type="text" class="control-text calendar" style="width: 143px">
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>班型结束售卖时间</label>
+                                <div class="controls">
+                                    <input id="class_end_time" type="text" class="control-text calendar" style="width: 143px">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="control-group span24 span-first">
+                                <label class="control-label">班型介绍</label>
+                                <div class="controls control-row4">
+                                    <textarea class="input-large bui-form-field" id="school_detail"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div class="span24">
+                <div class="panel">
+                    <div class="panel-header clearfix">
+                        <h3 class="pull-left">班型协议</h3>
+                        <!-- <div class="pull-right">
+                             <div class="file-input-wrapper">
+                                 <input type="file" id="pdf" name="fileData" hidefocus="true" class="file-input" multiple="multiple">
+                             </div>
+
+                         </div>-->
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="control-group span24" style="margin-top: 20px">
+                                <!--<label class="control-label">班型协议</label>-->
+                                <!--<div class="controls control-row4">-->
+                                <!--<textarea id="pdf_path" class="input-large bui-form-field" style="width: 500px;height: 550px"></textarea>-->
+                                <!--</div>-->
+                                <a style="margin-left: 55px" id="look">查看协议</a>
+                            </div>
+
+                            <div class="control-group span24 span-first"
+                                 style="padding-left: 55px;height: 80px;line-height: 80px">
+                                <div class="file-input-wrapper">
+                                    <!--<input type="file" id="protocol" name="file" hidefocus="true" class="file-input" multiple="multiple">-->
+                                    <iframe id="iframe_display" name="iframe_display" style="display: none;"></iframe>
+
+                                    <form action='../kld_enroll/upload_file.php' method="post"
+                                          enctype="multipart/form-data" target="iframe_display">
+                                        <input type="file" name="file" id="protocol">
+                                        <input type="submit" value="新上传" id="t3">
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<hr/>-->
+        <div class="row-fluid" style="margin-bottom: 30px">
+            <div class="span11 span-first">&nbsp;</div>
+            <div class="form-actions span13">
+                <input type="button" id="submit" class="button button-primary" value="保存"/>
+                <a href="class_type.html" class="button">返回</a>
+            </div>
+        </div>
+</div>
+
+<script type="text/javascript" src="../assets/bootstrap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/sea.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<!--<script type="text/javascript" src="../assets/js/pdfobject.min.js"></script>-->
+<script type="text/javascript" src="../assets/kld_js/pdf.js"></script>
+<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+<script type="text/javascript" src="../assets/kld_js/class_amend.js"></script>
+</body>
+</html>

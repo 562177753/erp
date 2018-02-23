@@ -1,0 +1,54 @@
+
+.row_1{
+	width:90%;
+	margin: 20px auto;
+}
+.row_1>div{
+	display: inline-block;
+	width: 33%;
+}	
+#relief_product,#select_xm,#select_bx{
+	width: 45%;
+}
+#select_yx{
+	width: 50%;
+}
+#select_bx{
+	margin-left: 35px;
+}
+#select_xm{
+	margin-left: 24px;
+}
+#select_yhm,#select_kq{
+	width: 50%;
+	height: 30px;
+}
+.odiv_1{
+	position: relative;
+}
+#a_png{
+	position: absolute;
+	width: 30px;
+	right:35%;
+	top: 13%;
+}
+#a_png>img{
+	width: 62%;
+	height: 100%;
+}
+#select_sect{
+	position: absolute;
+	border: 1px solid #ccc;
+	min-height: 20px;
+	max-height:90px;
+	background:white;
+	right: 4%;
+	width: 75%;
+	display: none;
+}
+.odiv2{
+  display: flex;
+}
+#select_yhje{
+	margin-right: 30px;
+}

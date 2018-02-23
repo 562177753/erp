@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta http-equiv="Pragma" content="no-cache">    
+	<meta http-equiv="Cache-Control" content="no-cache">    
+	<meta http-equiv="Expires" content="0">  
+	<title></title>   			
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
+	<link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css" />
+ 	<link href="../assets/css/page-min.css" rel="stylesheet" type="text/css" />
+	</head>
+	 <style>
+	 	select{
+ 		 appearance:none;
+ 		 -moz-appearance:none;
+        -webkit-appearance:none;
+        /*background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;*/
+         padding-right: 14px;
+         background: white;
+         }
+	 </style>
+	<body>
+
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span24">
+					<div class="panel">
+						<div class="panel-header">
+							<h3>查询条件</h3>
+						</div>
+						<div class="panel-body">
+							<form id="searchForm" class="form-horizontal">
+								<div class="row span23" style="margin-left: 60px;">
+									<!--产品-->
+									<div class="span6">
+										<lable>产品：</lable>
+										<select id="Class_xing" style=""  class="js-example-basic-single" name="state"></select>
+									</div>
+									<!--类型-->
+									<div class="span5">
+										<lable>类型：</lable>
+										<select id="class_type" style="width: 140px;">
+												<option>类型</option>
+												<option value="折扣券">折扣券</option>
+												<option value="代金券">代金券</option>
+											</select>
+									</div>
+									<!--金额折扣-->
+									<div class="span5">
+										<lable>金额折扣:</lable>
+										<input id="amount_money"  type="text" style="width: 60px;" class="control-text" placeholder="金额/折扣">
+									</div>
+									<!--状态-->
+									<div class="span5">
+										<label>状态:</label>
+										<select id="_status" style="width: 160px;">
+												<option>状态</option>
+												<option value="已使用">已使用</option>
+												<option value="未使用">未使用</option>
+												<option value="停用">停用</option>
+											</select>
+									</div>									
+								</div>
+
+								<div class="row span22" style="margin-left: 36px;margin-top: 20px;">
+									<!--申请日期-->
+									<div class="span6">
+										<lable>申请日期：</lable>
+										<input type="text" style="width: 135px;" id="filing_date" class="calendar" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " placeholder="申请日期" />
+									</div>
+									<!-- 使用期限 -->
+									<div class="span11">
+										<lable style="margin-left: 11px;" >使用期限：</lable>
+										<input type="text" style="width: 114px;height: 17px;" id="time_limit_1" class="calendar" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " />
+										——
+										<input type="text" style="width: 114px;height: 17px;" id="time_limit_2" class="calendar" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " />
+									</div>						
+									<div class="span4" style="margin-left: 70px;">
+										<input type="button" id="btnSearch" class="button button-primary" value="查询" />
+										<input type="reset" class="button" value="重置" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span24">
+					<div class="panel">
+						<div class="panel-header" style="display: flex;position: relative;">
+							<h3>优惠劵详情</h3>
+							<div style="position: absolute;right: 10px;">
+								<a type="button" class="button button-primary" href="#" id="leading_out">导出表格</a>
+								<a type="button" class="button button-danger" href="value_page.html">新建优惠券</a>
+							</div>
+						</div>
+						<div class="panel-body">
+							
+							<!--表格-->
+							<div class="search-grid-container">
+								<div id="grid"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+    <!--start停用-->
+    <div id="block_up" style="display: none;">
+    	<p>确认停用？</p>
+    </div>
+    <!--end停用-->
+
+		<footer>
+			<div style="height:30px"></div>
+		</footer>
+		<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+		
+		<script type="text/javascript" src="../assets/js/sea.js"></script>
+		<script type="text/javascript" src="../assets/js/bui.js"></script>
+		<script type="text/javascript" src="../assets/js/config-min.js"></script>
+		<!--<script type="text/javascript" src="../assets/tab_js/xlsx.full.min.js"></script>-->
+		<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+		<script type="text/javascript" src="../assets/kld_js/value_voucher.js"></script>
+		
+	</body>
+
+</html>

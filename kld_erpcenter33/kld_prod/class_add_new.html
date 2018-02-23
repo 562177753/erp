@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>卡拉荻|ERP系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link href="../assets/css/bs3/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bs3/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .control-number::-webkit-outer-spin-button,
+        .control-number::-webkit-inner-spin-button {
+            -webkit-appearance: none !important;
+        }
+
+        .control-number {
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            padding: 4px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="row-fluid">
+        <div class="span24">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>基本信息</h3>
+                </div>
+
+                <div class="panel-body">
+                    <form id="Form" class="form-horizontal">
+                        <div class="row">
+                            <div class="bui-form-group-select" data-type="type1">
+                                <div class="control-group span8 span-first">
+                                    <label class="control-label"><s>*</s>大区</label>
+                                    <div class="controls">
+                                        <select id="part_id">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group span8">
+                                    <label class="control-label"><s>*</s>军团</label>
+                                    <div class="controls">
+                                        <select id="opr_college_id">
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bui-form-group-select" data-type="type0">
+                                <div class="control-group span8">
+                                    <label class="control-label"><s>*</s>项目</label>
+                                    <div class="controls">
+                                        <select id="project_id">
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="control-group span8 span-first">
+                                    <label class="control-label"><s>*</s>院校</label>
+                                    <div class="controls">
+                                        <select id="college_id">
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>班型名称</label>
+                                <div class="controls">
+                                    <input id="class_name" type="text" class="control-text">
+                                </div>
+                            </div>
+                           <!-- <div class="bui-form-group-select" data-type="type1">
+                                <div class="control-group span8 span-first">
+                                    <label class="control-label"><s>*</s>大区</label>
+                                    <div class="controls">
+                                        <select id="part_id">
+                                            <option selected>请选择</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="control-group span8">
+                                    <label class="control-label"><s>*</s>军团</label>
+                                    <div class="controls">
+                                        <select id="opr_college_id">
+                                            <option selected>请选择</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>-->
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>计划招生人数</label>
+                                <div class="controls">
+                                    <input id="plan_recruit_num" type="number" class="control-number">
+                                </div>
+                            </div>
+                            <div class="control-group span8 span-first">
+                                <label class="control-label"><s>*</s>班型标准价格</label>
+                                <div class="controls">
+                                    <input id="class_price" type="number" class="control-number">
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>班型最低价格</label>
+                                <div class="controls">
+                                    <input id="class_cost" type="number" class="control-number">
+                                </div>
+                            </div>
+                            <!--<div class="control-group span8">-->
+                            <!--<label class="control-label"><s>*</s>班型售卖价格</label>-->
+                            <!--<div class="controls">-->
+                            <!--<input id="class_selling_price" type="number" class="control-number">-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>标准价格分成(%)</label>
+                                <div class="controls">
+                                    <input id="class_price_standard" type="text" class="control-text">
+                                </div>
+                            </div>
+                            <div class="control-group span8 span-first">
+                                <label class="control-label" style="width:113px;"><s>*</s>非标准价格分成(%)</label>
+                                <div class="controls">
+                                    <input id="class_price_nonstandard" type="text" class="control-text">
+                                </div>
+                            </div>
+                            <!--<div class="control-group span8">-->
+                                <!--<label class="control-label"><s>*</s>状态</label>-->
+                                <!--<div class="controls">-->
+                                    <!--<select id="state">-->
+                                        <!--<option>请选择</option>-->
+                                        <!--<option value="上架">上架</option>-->
+                                        <!--<option value="下架">下架</option>-->
+                                        <!--&lt;!&ndash;<option value="全部">全部</option>&ndash;&gt;-->
+                                    <!--</select>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>班型开始售卖时间</label>
+                                <div class="controls">
+                                    <input id="class_start_time" type="text"
+                                           class="control-text calendar" style="width: 143px">
+                                </div>
+                            </div>
+                            <div class="control-group span8">
+                                <label class="control-label"><s>*</s>班型结束售卖时间</label>
+                                <div class="controls">
+                                    <input id="class_end_time" type="text" class="control-text calendar" style="width: 140px">
+                                </div>
+                            </div>
+                            <div class="control-group span24 span-first">
+                                <label class="control-label">班型介绍</label>
+                                <div class="controls control-row4">
+                                    <textarea class="input-large bui-form-field" id="school_detail"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span24">
+            <div class="panel">
+                <div class="panel-header clearfix">
+                    <h3 class="pull-left">上传班型协议</h3>
+                    <!--<div class="file-input-wrapper">
+                        <input type="file" id="protocol" name="pdf"
+                                                           hidefocus="true"
+                                                           class="file-input" multiple="multiple">
+                    </div>-->
+                </div>
+                <div class="panel-body">
+                    <div class="row" style="margin-left: 40px">
+
+                        <div class="control-group span24 span-first"
+                             style="padding-left: 20px;height: 80px;line-height: 80px">
+                            <div class="file-input-wrapper">
+                                <!--<input type="file" id="protocol" name="file" hidefocus="true" class="file-input" multiple="multiple">-->
+                                <!--禁止跳页-->
+                                <iframe id="iframe_display" name="iframe_display" style="display: none;"></iframe>
+
+                                <form action='../kld_enroll/upload_file.php' name="uploadForm" method="post"
+                                      enctype="multipart/form-data" target="iframe_display">
+                                    <s style="color: red;text-decoration: none">*</s> <input type="file" name="file" id="protocol">
+                                    <input type="submit" value="上传" id="t3">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid" style="margin-bottom: 30px;">
+        <div class="span11 span-first">&nbsp;</div>
+        <div class="form-actions span13">
+            <input id="submit" type="button" class="button button-primary" value="保存"/>
+            <a href="class_type.html" class="button">返回</a>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../assets/bootstrap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript" src="../assets/kld_js/utils.js"></script>
+<script type="text/javascript" src="../assets/kld_js/class_add_new.js"></script>
+</body>
+</html>
